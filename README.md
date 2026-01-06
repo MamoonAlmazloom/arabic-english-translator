@@ -31,12 +31,19 @@ cd translator-app
 npm install
 ```
 
-3. Create a `.env` file in the root directory
-```
+3. Get a Google Gemini API key
+   - Go to [Google AI Studio](https://aistudio.google.com/app/apikey)
+   - Sign in with your Google account
+   - Click "Get API Key" or "Create API Key"
+   - Copy your API key
+
+4. Create a `.env` file in the root directory and add your API key:
+```bash
 REACT_APP_GEMINI_API_KEY=your_api_key_here
 ```
+**Note:** Never commit your `.env` file to git. It's already in `.gitignore`.
 
-4. Start the development server
+5. Start the development server
 ```bash
 npm start
 ```
