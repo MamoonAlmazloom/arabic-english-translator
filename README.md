@@ -115,7 +115,7 @@ translator-app/
 
 ## 👤 Author
 
-**Mamoon Almazloom**
+**Mamoon**
 
 ---
 
