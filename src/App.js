@@ -6,6 +6,7 @@ import ErrorMessage from "./components/ErrorMessage";
 import TranslationOutput from "./components/TranslationOutput";
 import Footer from "./components/Footer";
 import TranslationHistory from "./components/TranslationHistory";
+import SpeakerButton from "./components/SpeakerButton";
 
 function App() {
   const [input, setInput] = useState("");
@@ -27,6 +28,7 @@ function App() {
     setError("");
     setTranslate("");
 
+    
     try {
       const translation = await translateText(input);
       setTranslate(translation);
@@ -46,7 +48,10 @@ function App() {
       setLoading(false);
     }
   };
-
+const detectLanguage = (text) => {
+      const arabicRegex = /[\u0600-\u06FF]/;
+      return arabicRegex.test(text) ? 'ar' : 'en';
+    }
   const handleCopy = async () => {
     try {
       await navigator.clipboard.writeText(translate);
@@ -69,6 +74,8 @@ const handleHistorySelect = (item) => {
   setTranslate(item.translated);
 };
   return (
+    
+   
     <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 p-8">
       <div className="max-w-4xl mx-auto">
         <h1 className="text-4xl font-bold text-center text-gray-800 mb-8">
@@ -79,8 +86,8 @@ const handleHistorySelect = (item) => {
           value={input}
           onChange={setInput}
           onClear={handleClear}
+          
         />
-
         <TranslateButton onClick={handleTranslate} loading={loading} />
 
         <ErrorMessage message={error} />

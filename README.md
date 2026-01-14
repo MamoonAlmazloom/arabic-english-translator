@@ -20,33 +20,36 @@ Try it now: **https://arabic-english-translator.vercel.app/**
 ✅ **Bilingual Interface** - UI text in both English and Arabic for accessibility  
 ✅ **Loading Animation** - Professional bouncing dots during translation  
 ✅ **One-Click Copy** - Copy translations to clipboard instantly  
+✅ **Speaker Button** - Listen to pronunciation of input and output text  
 ✅ **Clean Architecture** - Professional component-based React structure  
-✅ **Responsive Design** - Beautiful gradient UI with Tailwind CSS  
+✅ **Responsive Design** - Beautiful gradient UI with Tailwind CSS
 
 ---
 
 ## 🛠️ Tech Stack
 
-| Technology | Purpose |
-|------------|---------|
-| **React 18** | Frontend framework |
-| **Tailwind CSS** | Styling and responsive design |
-| **Google Gemini 2.5 Flash** | AI translation engine |
-| **localStorage API** | Client-side data persistence |
-| **Vercel** | Deployment and hosting |
+| Technology                  | Purpose                       |
+| --------------------------- | ----------------------------- |
+| **React 18**                | Frontend framework            |
+| **Tailwind CSS**            | Styling and responsive design |
+| **Google Gemini 2.5 Flash** | AI translation engine         |
+| **localStorage API**        | Client-side data persistence  |
+| **Vercel**                  | Deployment and hosting        |
 
 ---
 
 ## 📁 Project Structure
+
 ```
 translator-app/
 ├── src/
 │   ├── components/
-│   │   ├── TranslationInput.jsx      # Input textarea with bilingual placeholders
+│   │   ├── TranslationInput.jsx      # Input textarea with bilingual placeholders & speaker button
 │   │   ├── TranslateButton.jsx       # Gradient button with loading state
 │   │   ├── LoadingSpinner.jsx        # Animated bouncing dots
 │   │   ├── ErrorMessage.jsx          # Error display component
-│   │   ├── TranslationOutput.jsx     # Output box with copy functionality
+│   │   ├── TranslationOutput.jsx     # Output box with copy & speaker button
+│   │   ├── SpeakerButton.jsx         # Text-to-speech pronunciation component
 │   │   ├── TranslationHistory.jsx    # History list with click-to-load
 │   │   └── Footer.jsx                # Branding footer
 │   ├── utils/
@@ -72,33 +75,38 @@ translator-app/
 ### Installation
 
 1. **Clone the repository**
+
 ```bash
    git clone https://github.com/MamoonAlmazloom/arabic-english-translator.git
    cd arabic-english-translator
 ```
 
 2. **Install dependencies**
+
 ```bash
    npm install
 ```
 
 3. **Set up environment variables**
-   
+
    Create a `.env` file in the root directory:
+
 ```env
    REACT_APP_GEMINI_API_KEY=your_api_key_here
 ```
 
 4. **Start development server**
+
 ```bash
    npm start
 ```
-   
-   Open [http://localhost:3000](http://localhost:3000)
+
+Open [http://localhost:3000](http://localhost:3000)
 
 ---
 
 ## 💡 How It Works
+
 ```
 User Input → Gemini API → Language Detection → Translation → Display
                                 ↓
@@ -110,9 +118,17 @@ User Input → Gemini API → Language Detection → Translation → Display
 1. User enters text in Arabic or English
 2. Google Gemini AI detects the source language
 3. Text is translated to the opposite language
-4. Translation displayed with copy button
-5. Saved to history (last 10 translations)
-6. History persists across browser sessions
+4. Translation displayed with copy button and speaker button
+5. Click speaker button (🔈) to listen to pronunciation
+6. Saved to history (last 10 translations)
+7. History persists across browser sessions
+
+### Speaker Button Features
+
+- **Automatic Language Detection**: Detects Arabic vs English text
+- **Native Browser Text-to-Speech**: Uses Web Speech API for pronunciation
+- **Visual Feedback**: Button animates with pulse effect during playback
+- **Positioned Smartly**: Located at bottom of input/output boxes to avoid text overlap
 
 ---
 
@@ -132,7 +148,7 @@ User Input → Gemini API → Language Detection → Translation → Display
 ✅ Error handling with user-friendly messages  
 ✅ Input validation before API calls  
 ✅ Component-based architecture for maintainability  
-✅ Separation of concerns (UI vs API logic)  
+✅ Separation of concerns (UI vs API logic)
 
 ---
 
@@ -160,6 +176,7 @@ User Input → Gemini API → Language Detection → Translation → Display
 ## 📦 Deployment
 
 Deployed on **Vercel** with automatic CI/CD:
+
 - Push to `main` branch → Auto-deploy
 - Environment variables configured in Vercel dashboard
 - HTTPS enabled by default
@@ -172,7 +189,7 @@ Deployed on **Vercel** with automatic CI/CD:
 
 📍 Dammam/Khobar, Saudi Arabia  
 🎓 Computer Science Graduate  
-💼 Aspiring Software Engineer  
+💼 Aspiring Software Engineer
 
 ---
 

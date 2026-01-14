@@ -1,4 +1,12 @@
+import SpeakerButton from './SpeakerButton';
+
 function TranslationInput({ value, onChange, onClear }) {
+  // Detect language
+  const detectLanguage = (text) => {
+    const arabicPattern = /[\u0600-\u06FF]/;
+    return arabicPattern.test(text) ? 'ar' : 'en';
+  };
+
   return (
     <div className="relative">
       <textarea
@@ -16,12 +24,18 @@ function TranslationInput({ value, onChange, onClear }) {
       )}
 
       {value && (
-        <button
-          onClick={onClear}
-          className="absolute bottom-2 right-2 px-3 py-1 text-xs font-medium text-red-500 hover:text-white hover:bg-red-500 rounded-md transition-all duration-200"
-        >
-          Clear
-        </button>
+        <>
+          <div className="absolute bottom-2 left-2">
+            <SpeakerButton text={value} language={detectLanguage(value)} />
+          </div>
+          
+          <button
+            onClick={onClear}
+            className="absolute bottom-2 right-2 px-3 py-1 text-xs font-medium text-red-500 hover:text-white hover:bg-red-500 rounded-md transition-all duration-200"
+          >
+            Clear
+          </button>
+        </>
       )}
     </div>
   );
