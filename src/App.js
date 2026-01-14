@@ -6,7 +6,6 @@ import ErrorMessage from "./components/ErrorMessage";
 import TranslationOutput from "./components/TranslationOutput";
 import Footer from "./components/Footer";
 import TranslationHistory from "./components/TranslationHistory";
-import SpeakerButton from "./components/SpeakerButton";
 
 function App() {
   const [input, setInput] = useState("");
@@ -48,10 +47,7 @@ function App() {
       setLoading(false);
     }
   };
-const detectLanguage = (text) => {
-      const arabicRegex = /[\u0600-\u06FF]/;
-      return arabicRegex.test(text) ? 'ar' : 'en';
-    }
+
   const handleCopy = async () => {
     try {
       await navigator.clipboard.writeText(translate);
