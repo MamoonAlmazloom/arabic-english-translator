@@ -6,9 +6,9 @@
 [![React](https://img.shields.io/badge/React-18-blue?style=for-the-badge&logo=react)](https://reactjs.org/)
 [![Tailwind CSS](https://img.shields.io/badge/Tailwind-CSS-38B2AC?style=for-the-badge&logo=tailwind-css)](https://tailwindcss.com/)
 
-## 🚀 [Live Demo](YOUR_VERCEL_URL_HERE)
+## 🚀 [Live Demo](https://calmtranslate.vercel.app/)
 
-Try it now: **https://arabic-english-translator.vercel.app/**
+Try it now: **https://calmtranslate.vercel.app/**
 
 ---
 
