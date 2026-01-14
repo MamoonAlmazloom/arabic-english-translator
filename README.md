@@ -1,8 +1,8 @@
-# Arabic ↔ English Translator
+# CalmTranslate - Arabic ↔ English Translator
 
-> AI-powered bidirectional translation between Arabic and English with persistent history
+> AI-powered bidirectional translation between Arabic and English with instant pronunciation and persistent history
 
-[![Live Demo](https://img.shields.io/badge/demo-live-success?style=for-the-badge)](YOUR_VERCEL_URL_HERE)
+[![Live Demo](https://img.shields.io/badge/demo-live-success?style=for-the-badge)](https://calmtranslate.vercel.app/)
 [![React](https://img.shields.io/badge/React-18-blue?style=for-the-badge&logo=react)](https://reactjs.org/)
 [![Tailwind CSS](https://img.shields.io/badge/Tailwind-CSS-38B2AC?style=for-the-badge&logo=tailwind-css)](https://tailwindcss.com/)
 
