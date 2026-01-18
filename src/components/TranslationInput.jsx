@@ -1,15 +1,23 @@
 import SpeakerButton from './SpeakerButton';
 
-function TranslationInput({ value, onChange, onClear }) {
+function TranslationInput({ value, onChange, onClear, onTranslate }) {
   // Detect language
   const detectLanguage = (text) => {
     const arabicPattern = /[\u0600-\u06FF]/;
     return arabicPattern.test(text) ? 'ar' : 'en';
   };
+  const handleKeyDown = (e) => {
+    if (e.key ===  "Enter") {
+      e.preventDefault();
+      onTranslate();
+    }
+  }
+
 
   return (
     <div className="relative">
       <textarea
+        onKeyDown={handleKeyDown}
         rows="6"
         value={value}
         onChange={(e) => onChange(e.target.value)}

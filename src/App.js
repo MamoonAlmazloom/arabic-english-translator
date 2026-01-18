@@ -6,6 +6,7 @@ import ErrorMessage from "./components/ErrorMessage";
 import TranslationOutput from "./components/TranslationOutput";
 import Footer from "./components/Footer";
 import TranslationHistory from "./components/TranslationHistory";
+import Header from "./components/Header";
 
 function App() {
   const [input, setInput] = useState("");
@@ -74,14 +75,15 @@ const handleHistorySelect = (item) => {
    
     <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 p-8">
       <div className="max-w-4xl mx-auto">
-        <h1 className="text-4xl font-bold text-center text-gray-800 mb-8">
-          Arabic ↔ English Translator
-        </h1>
+    <div className="text-center mb-8">
+        <Header />
+        </div>
 
         <TranslationInput
           value={input}
           onChange={setInput}
           onClear={handleClear}
+          onTranslate={handleTranslate}
           
         />
         <TranslateButton onClick={handleTranslate} loading={loading} />
