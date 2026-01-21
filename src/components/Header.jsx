@@ -1,6 +1,6 @@
 function Header() {
   return (
-    <header className="text-center mb-10 md:mb-14">
+    <header className="text-center ">
       {/* Logo */}
       <div className="inline-flex items-center justify-center gap-3">
         <div className="relative">
